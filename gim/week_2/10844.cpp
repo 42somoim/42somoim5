@@ -6,13 +6,12 @@ using namespace std;
 int main(void)
 {
     int N;
-    int arr[1001];
+    int arr[101];
 
+    arr[1] = 9;
     cin >> N;
-    arr[1] = 1;
-    arr[2] = 3;
-    for (int i = 3; i<= N; i++)
-        arr[i] = (arr[i - 1] + arr[i - 2] + 1) % 10007;
+    for (int i = 2; i <= N; i++)
+        arr[i] = (2 * arr[i - 1] - (i - 1)) % 1000000000;
     cout << arr[N] << '\n';
     return (0);
 }
