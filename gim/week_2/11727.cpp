@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //보류.
+=======
+// 보류.
+>>>>>>> f5241f8edf112dfa1c10f1cc6c9999a936bc27a1
 #include <iostream>
 #include <cstdio>
 
