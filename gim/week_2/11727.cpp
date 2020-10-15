@@ -1,17 +1,28 @@
+//보류.
 #include <iostream>
+#include <cstdio>
 
 using namespace std;
+
+int arr[1001];
+
+int dq(int n)
+{
+    if (n == 1)
+        return (1);
+    if (n == 2)
+        return (3);
+    if (arr[n] != 0)
+        return (arr[n]);
+    return (arr[n] = dq(n - 1) + dq(n - 2) + dq(n - 2));
+}
 
 int main(void)
 {
     int N;
-    int arr[1001];
 
-    cin >> N;
-    arr[1] = 1;
-    arr[2] = 3;
-    for (int i = 3; i<= N; i++)
-        arr[i] = (arr[i - 1] + arr[i - 2] + 1) % 10007;
-    cout << arr[N] << '\n';
+    scanf("%d", &N);
+    printf("%d\n", dq(N));
+
     return (0);
 }
