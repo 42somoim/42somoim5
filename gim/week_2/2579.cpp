@@ -15,7 +15,7 @@ int main(void)
         scanf("%d", &stairs[i]);
     dp[1] = stairs[1];
     for (int i = 3; i <= N; i++)
-        dp[i] = max(dp[i - 3] + stairs[i - 1] + stairs[i], dp[i - 2], stairs[i]);
+        dp[i] = max(dp[i - 3] + stairs[i - 1] + stairs[i], dp[i - 2] + stairs[i]);
     printf("%d\n", dp[N]);
     return (0);
 }
