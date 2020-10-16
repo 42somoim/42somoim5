@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-//보류.
-=======
-// 보류.
->>>>>>> f5241f8edf112dfa1c10f1cc6c9999a936bc27a1
 #include <iostream>
 #include <cstdio>
 
@@ -18,7 +13,7 @@ int dq(int n)
         return (3);
     if (arr[n] != 0)
         return (arr[n]);
-    return (arr[n] = dq(n - 1) + dq(n - 2) + dq(n - 2));
+    return (arr[n] = (dq(n - 1) + dq(n - 2) + dq(n - 2)) % 10007);
 }
 
 int main(void)
