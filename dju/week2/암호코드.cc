@@ -16,9 +16,6 @@ int decrypt_case(int n) {
 }
 
 int main() {
-#ifdef _CONSOLE
-	freopen("input.txt", "r", stdin);
-#endif
 	ios_base::sync_with_stdio(false); cin.tie(NULL);
 
 	cin >> cipher;
