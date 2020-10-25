@@ -38,7 +38,7 @@ int     main()
         int maxv = d[0];
         for (int j = 0; j < i; j++)
         {
-            if (v[i] > v[j] && maxv < d[j])
+            if (v[i] < v[j] && maxv < d[j])
                 maxv = d[j];
         }
         d[i] = maxv + 1;
