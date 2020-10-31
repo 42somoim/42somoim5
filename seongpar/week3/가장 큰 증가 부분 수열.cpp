@@ -41,7 +41,7 @@ int     main()
             if (v[i] > v[j] && maxv < d[j])
                 maxv = d[j];
         }
-        d[i] = maxv + 1;
+        d[i] = maxv + v[i];
     }
 
     printf("%d\n", *max_element(all(d)));

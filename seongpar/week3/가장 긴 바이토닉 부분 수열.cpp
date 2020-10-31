@@ -32,19 +32,34 @@ int     main()
     for (int i = 1; i <= n; i++)
         scanf("%d", &v[i]);
 
-    vector<int> d(n + 1);
+    vector<int> d1(n + 1);
     for (int i = 1; i <= n; i++)
     {
-        int maxv = d[0];
+        int maxv = d1[0];
         for (int j = 0; j < i; j++)
         {
-            if (v[i] > v[j] && maxv < d[j])
-                maxv = d[j];
+            if (v[i] > v[j] && maxv < d1[j])
+                maxv = d1[j];
         }
-        d[i] = maxv + 1;
+        d1[i] = maxv + 1;
     }
 
-    printf("%d\n", *max_element(all(d)));
+    vector<int> d2(n + 1);
+    for (int i = 1; i <= n; i++)
+    {
+        int maxv1 = d1[0];
+        int maxv2 = d2[0];
+        for (int j = 0; j < i; j++)
+        {
+            if (v[i] < v[j] && maxv1 < d1[j])
+                maxv1 = d1[j];
+            if (v[i] < v[j] && maxv2 < d2[j])
+                maxv2 = d2[j];
+        }
+        d2[i] = max(maxv1, maxv2) + 1;
+    }
+
+    printf("%d\n", *max_element(all(d2)));
 
     return 0;
 }
